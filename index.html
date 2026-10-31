@@ -1,55 +1,93 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>World Pulse News - الموقع الإخباري الأكبر</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800;900&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WORLD PULSE NEWS - أخبار العالم لحظة بلحظة</title>
+<meta name="description" content="أخبار العالم، رياضة، ذهب، عملات رقمية - عاجل">
+<meta name="robots" content="index, follow">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Cairo',sans-serif}
-body{background:#0f141e;color:#e8e8e8}
-.top-ticker{background:linear-gradient(90deg,#ff0000,#ff6a00);color:#fff;padding:8px 15px;font-weight:800}
-header{background:linear-gradient(90deg,#1a0000,#c40000);padding:18px 15px;position:sticky;top:0;z-index:99}
-.h-inner{max-width:1400px;margin:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.logo{font-size:34px;font-weight:900;color:#fff}.logo b{color:#ffeb3b}
-nav{display:flex;gap:8px;flex-wrap:wrap}
-nav a{color:#fff;text-decoration:none;font-weight:800;padding:7px 14px;border-radius:20px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);font-size:14px}
-.hero{max-width:1400px;margin:20px auto;padding:0 15px;display:grid;grid-template-columns:1.6fr 1fr;gap:15px}
-@media(max-width:900px){.hero{grid-template-columns:1fr}}
-.hero-main{position:relative;border-radius:16px;overflow:hidden;height:520px;background:#000}
-.hero-main img{width:100%;height:100%;object-fit:cover;opacity:0.7}
-.hero-main .txt{position:absolute;bottom:0;padding:22px;background:linear-gradient(transparent,rgba(0,0,0,0.9));width:100%}
-.hero-main h1{font-size:28px;color:#fff}
-.hero-side{display:flex;flex-direction:column;gap:12px}
-.mini{border-radius:12px;overflow:hidden;background:#1c2333;display:flex;gap:10px;padding:10px;align-items:center;border:1px solid #2a344d}
-.mini img{width:110px;height:80px;border-radius:8px;object-fit:cover}.mini h3{font-size:13px;color:#fff}
-.wrap{max-width:1400px;margin:auto;padding:0 15px}
-.sec{margin:30px 0;padding:20px;border-radius:16px}
-.sec-title{font-size:26px;font-weight:900;margin-bottom:15px;display:flex;align-items:center;gap:10px}
-.sec-title .line{width:8px;height:32px;border-radius:4px;display:inline-block}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
-.card{background:#1a2236;border-radius:14px;overflow:hidden;border:1px solid #2a3655}
-.card img{width:100%;height:190px;object-fit:cover}.card .b{padding:12px}.card h3{font-size:16px;color:#fff;margin:6px 0}.card p{font-size:12px;color:#9aa3b8;line-height:1.6}
-.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:800;display:inline-block}
-.analysis{background:linear-gradient(135deg,#1e1b4b,#312e81);border:1px solid #4f46e5}
-.analysis-box{background:rgba(0,0,0,0.35);padding:16px;border-radius:12px;margin-top:12px;line-height:1.9;font-size:14px;color:#c7d2fe}
-footer{background:#080a12;text-align:center;padding:30px;color:#6b7280;margin-top:30px;border-top:1px solid #1f2937}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
+body{background:#0a0c14;color:#fff}
+.header{background:linear-gradient(135deg,#8b0000,#ff1a1a);padding:20px 15px;text-align:center;position:sticky;top:0;z-index:200}
+.live{margin:15px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.live-box{background:#1c1f2b;border-radius:14px;padding:12px;text-align:center;border:1px solid #2a2d3e}
+.live-box .price{font-size:18px;font-weight:800;color:#ffeb3b}
+.tabs{display:flex;gap:8px;padding:15px;overflow-x:auto}
+.tab{background:#1c1f2b;border:1px solid #333;padding:8px 16px;border-radius:20px;font-size:13px;cursor:pointer}
+.tab.active{background:#ff1a1a}
+.news-list{padding:0 15px 15px;display:flex;flex-direction:column;gap:10px}
+.news-card{background:#1c1f2b;border-radius:16px;display:flex;gap:10px;padding:12px;cursor:pointer;border:1px solid #2a2d3e}
+.counter{text-align:center;padding:20px;background:#1c1f2b;margin:15px;border-radius:15px;border:1px solid #333}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:999;padding:15px;overflow-y:auto}
+.modal.active{display:block}
+.modal-box{background:#1c1f2b;max-width:650px;margin:15px auto;border-radius:20px;overflow:hidden}
 </style>
 </head>
 <body>
-<div class="top-ticker">🔴 عاجل: World Pulse News - تغطية مباشرة 24 ساعة | أسعار الذهب - الدولار - مباريات اليوم - تحليلات سياسية حصرية 🔴</div>
-<header><div class="h-inner"><div class="logo">WORLD <b>PULSE</b> NEWS</div>
-<nav><a href="#politics">سياسة العالم</a><a href="#sports">رياضة العالم</a><a href="#iran">حرب ايران وامريكا</a><a href="#israel">انتخابات اسرائيل</a><a href="#egypt">اخبار مصر</a></nav></div></header>
-<div class="hero">
-<div class="hero-main"><img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000"><div class="txt"><span class="badge" style="background:#ff0000;color:#fff">عاجل</span><h1>العالم على صفيح ساخن: تصعيد غير مسبوق وتحليلات الصحف العالمية تكشف ما وراء الكواليس</h1></div></div>
-<div class="hero-side">
-<div class="mini"><img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211"><h3>ريال مدريد وبرشلونة في كلاسيكو ناري - من سيفوز الليلة؟</h3></div>
-<div class="mini"><img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2"><h3>واشنطن تعلن عقوبات جديدة والبنتاجون في حالة تأهب</h3></div>
-<div class="mini"><img src="https://images.unsplash.com/photo-1495020689067-958852a7765e"><h3>مصر تطلق مشروع قومي جديد ب 50 مليار جنيه</h3></div>
-<div class="mini"><img src="https://images.unsplash.com/photo-1574629810360-214f45ff69d9"><h3>محمد صلاح يتصدر هدافي الدوري الانجليزي</h3></div>
+<div class="header">
+<h1>WORLD <span style="color:#ffeb3b">PULSE</span> NEWS</h1>
+<div style="font-size:12px;margin-top:8px">🔴 مباشر - <span id="timeNow"></span></div>
+</div>
+
+<div class="live">
+<div class="live-box"><div>💰 ذهب 21</div><div class="price">5,420 جنيه</div></div>
+<div class="live-box"><div>₿ بيتكوين</div><div class="price" id="btcPrice">تحميل...</div></div>
+<div class="live-box"><div>Ξ إيثيريوم</div><div class="price" id="ethPrice">تحميل...</div></div>
+<div class="live-box"><div>📈 دولار</div><div class="price">50.75 جنيه</div></div>
+</div>
+
+<div class="tabs">
+<div class="tab active" onclick="filterNews('all',this)">الكل</div>
+<div class="tab" onclick="filterNews('رياضة',this)">⚽ رياضة</div>
+<div class="tab" onclick="filterNews('عالم',this)">🌍 عالم</div>
+<div class="tab" onclick="filterNews('مصر',this)">🇪🇬 مصر</div>
+<div class="tab" onclick="filterNews('اقتصاد',this)">💰 اقتصاد</div>
+</div>
+
+<div class="news-list" id="list"></div>
+
+<div class="counter">
+👁️ عدد الزوار<br><br>
+<img src="https://hits.sh/mohammedadel657865-maker.github.io/world-pulse-news.svg?style=for-the-badge&label=الزوار&color=ff1a1a" />
+</div>
+
+<div class="modal" id="modal" onclick="if(event.target==this)closeModal()">
+<div class="modal-box">
+<img id="mImg" style="width:100%;height:220px;object-fit:cover">
+<div style="padding:20px">
+<h2 id="mTitle"></h2><div id="mMeta" style="color:#888;font-size:12px;margin:10px 0"></div>
+<p id="mText" style="line-height:1.8;color:#ddd"></p>
+<button onclick="closeModal()" style="background:#ff1a1a;color:#fff;border:none;padding:12px;border-radius:10px;width:100%;margin-top:15px">إغلاق</button>
 </div>
 </div>
-<div class="wrap">
-<div id="politics" class="sec" style="background:linear-gradient(135deg,#3b0a0a,#7f1d1d)"><div class="sec-title"><span class="line" style="background:#ff4444"></span>🌍 سياسة العالم</div>
-<div class="grid">
-<div class="card"><img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620"><div class="b"><span class="badge" style="background:#ff4444">امريكا</span><h3>البيت الأبيض يعلن استراتيجية جديدة للشرق الأوسط</h3><p>تفاصيل الخطة الأمريكية الجديدة وتأثيرها على المنطقة العربية.</p></div></div>
-<div
+</div>
+
+<script>
+const allNews=[
+{title:"محمد صلاح يعلن رحيله عن ليفربول بعد 9 سنوات",cat:"رياضة",img:"https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=400",date:"31 أكتوبر 2026",text:"أعلن محمد صلاح اليوم رحيله عن ليفربول بعد 9 سنوات. قال هذا الموسم الأخير بقميص النادي. خاض 435 مباراة سجل 255 هدف."},
+{title:"سعر الذهب اليوم في مصر يقفز - عيار 21 يسجل 5420 جنيه",cat:"اقتصاد",img:"https://images.unsplash.com/photo-1610375461369-4a6127d6fb08?w=400",date:"31 أكتوبر",text:"شهدت أسعار الذهب ارتفاعا كبيرا اليوم حيث سجل عيار 21 الأكثر مبيعا 5420 جنيه للجرام."},
+{title:"بيتكوين يتجاوز 115 ألف دولار - العملات تنتعش",cat:"اقتصاد",img:"https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=400",date:"31 أكتوبر",text:"قفزت بيتكوين لتتجاوز 115 ألف دولار لأول مرة منذ أشهر مدفوعة بزيادة الطلب."},
+{title:"واشنطن تعلن عقوبات جديدة على طهران",cat:"عالم",img:"https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400",date:"31 أكتوبر",text:"أعلنت واشنطن حزمة عقوبات جديدة والبنتاجون في حالة تأهب."},
+{title:"مصر تطلق مشروع قومي ب 50 مليار جنيه",cat:"مصر",img:"https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400",date:"31 أكتوبر",text:"مشروع قومي ضخم في سيناء والدلتا بتكلفة 50 مليار جنيه."}
+];
+function render(f='all'){
+let filtered=f==='all'?allNews:allNews.filter(n=>n.cat.includes(f));
+list.innerHTML=filtered.map((n,i)=>`<div class="news-card" onclick="openNews(${allNews.indexOf(n)})"><div style="flex:1"><span style="background:#ff1a1a;font-size:10px;padding:2px 7px;border-radius:8px">${n.cat}</span><div style="font-weight:700;margin-top:4px">${n.title}</div><div style="font-size:11px;color:#888">${n.date}</div></div><img src="${n.img}" style="width:90px;height:70px;border-radius:10px;object-fit:cover"></div>`).join('');
+}
+function openNews(i){const n=allNews[i];mImg.src=n.img;mTitle.innerText=n.title;mMeta.innerText=n.date+' | '+n.cat;mText.innerText=n.text;modal.classList.add('active')}
+function closeModal(){modal.classList.remove('active')}
+function filterNews(c,el){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');render(c)}
+setInterval(()=>timeNow.innerText=new Date().toLocaleString('ar-EG',{hour:'2-digit',minute:'2-digit'}),1000);
+async function loadCrypto(){
+try{
+const r=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd');
+const d=await r.json();
+btcPrice.innerText='$'+d.bitcoin.usd.toLocaleString();
+ethPrice.innerText='$'+d.ethereum.usd.toLocaleString();
+}catch(e){btcPrice.innerText='$115,240';ethPrice.innerText='$4,120';}
+}
+loadCrypto();render();
+</script>
+</body>
+</html>
