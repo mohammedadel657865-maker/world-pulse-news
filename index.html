@@ -1,108 +1,130 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="World Pulse News brings you clear, independent explainers and original coverage of world affairs, business, technology, science and sport.">
-<meta name="theme-color" content="#101c2c">
-<title>World Pulse News | Understand What Matters</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="World Pulse News brings you global news, politics, business, technology and sports.">
+<title>World Pulse News</title>
 <style>
-:root{--navy:#101c2c;--navy2:#17283d;--red:#e7474f;--ink:#182435;--muted:#64748b;--line:#e6eaf0;--paper:#fff;--bg:#f3f5f8}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
-a{color:inherit}.topline{height:5px;background:var(--red)}
-header{background:var(--navy);color:white}.head{max-width:1160px;margin:auto;padding:22px 20px 16px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{font-family:Georgia,serif;font-size:29px;font-weight:bold;letter-spacing:-1px;text-decoration:none}.brand b{color:#ff6269}.tag{font-size:11px;color:#aebed0;letter-spacing:2px;text-transform:uppercase;margin-top:5px}
-.headright{font-size:12px;color:#bdc9d7;text-align:right}.navwrap{border-top:1px solid #ffffff20;border-bottom:1px solid #ffffff20}
-nav{max-width:1160px;margin:auto;padding:0 20px;display:flex;gap:0;overflow:auto;white-space:nowrap}
-nav a{color:#e4ebf4;text-decoration:none;padding:14px 17px;font-size:13px;font-weight:bold}
-nav a:first-child{padding-left:0}nav a:hover{color:#ff777d}
-.breaking{background:#fff;max-width:1160px;margin:18px auto 0;padding:11px 15px;display:flex;align-items:center;gap:12px;border:1px solid var(--line);font-size:13px}
-.breaking strong{background:var(--red);color:white;padding:6px 9px;font-size:10px;letter-spacing:1px}
-.breaking span{color:#596579}
-main{max-width:1160px;margin:0 auto;padding:22px 20px 60px}
-.kicker{font-size:11px;font-weight:bold;letter-spacing:1.4px;text-transform:uppercase;color:var(--red)}
-.leadgrid{display:grid;grid-template-columns:1.55fr 1fr;gap:18px}
-.hero,.sidecard,.story,.panel{background:white;border:1px solid var(--line)}
-.hero{display:grid;grid-template-columns:1.05fr .95fr;min-height:320px}
-.heroimg{background:linear-gradient(135deg,#233b58,#5b7793);display:grid;place-items:center;color:#dbe7f5;font-size:13px;text-align:center;padding:20px;min-height:240px}
-.heroimg .placeholder{border:1px dashed #ffffff80;padding:22px;max-width:230px}
-.herotext{padding:26px;display:flex;flex-direction:column;justify-content:center}
-h1{font-family:Georgia,serif;font-size:clamp(28px,3.4vw,43px);line-height:1.08;letter-spacing:-.8px;margin:12px 0}
-.deck{color:var(--muted);font-size:14px;line-height:1.65}
-.meta{font-size:11px;color:#8290a2;margin-top:16px}
-.sidecol{display:grid;gap:18px}.sidecard{padding:21px}
-.sidecard h2{font: bold 22px Georgia,serif;margin:9px 0}.sidecard p{font-size:13px;color:var(--muted);line-height:1.6;margin:0}
-.sectionhead{display:flex;justify-content:space-between;align-items:end;margin:34px 0 15px;border-bottom:2px solid var(--navy);padding-bottom:10px}
-.sectionhead h2{font: bold 25px Georgia,serif;margin:0}.sectionhead span{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.story{padding:19px;min-height:205px;display:flex;flex-direction:column}
-.story h3{font: bold 20px/1.2 Georgia,serif;margin:9px 0}
-.story p{font-size:13px;line-height:1.55;color:var(--muted);margin:0}
-.story .meta{margin-top:auto;padding-top:15px}
-.label{font-size:10px;color:var(--red);font-weight:bold;letter-spacing:1.2px;text-transform:uppercase}
-.layout2{display:grid;grid-template-columns:1.5fr .8fr;gap:18px;margin-top:30px}
-.panel{padding:22px}.panel h2{font: bold 23px Georgia,serif;margin:0 0 14px}
-.topiclist{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.topic{padding:14px;background:#f5f7fa;border:1px solid var(--line);font-size:13px;font-weight:bold}
-.note{font-size:12px;line-height:1.6;color:var(--muted)}
-footer{background:var(--navy);color:#d9e2ec;padding:32px 20px}
-.foot{max-width:1160px;margin:auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:25px}
-footer h3{font: bold 18px Georgia,serif;color:white;margin:0 0 12px}
-footer p,footer a{font-size:12px;line-height:1.7;color:#bac7d5}
-footer a{display:block;text-decoration:none;margin:5px 0}
-.copyright{max-width:1160px;margin:25px auto 0;border-top:1px solid #ffffff25;padding-top:15px;font-size:11px;color:#94a6ba}
-.disclaimer{background:#fff7e7;border:1px solid #f0dfb8;color:#735a2d;padding:12px 14px;font-size:12px;line-height:1.5;margin-top:18px}
-@media(max-width:850px){.leadgrid,.layout2{grid-template-columns:1fr}.hero{grid-template-columns:1fr 1fr}.cards{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:570px){.head{align-items:flex-start}.headright{display:none}.hero{grid-template-columns:1fr}.heroimg{min-height:165px}.cards,.topiclist,.foot{grid-template-columns:1fr}.breaking{margin:12px 12px 0}.breaking span{line-height:1.4}main{padding-left:12px;padding-right:12px}.herotext{padding:21px}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f4f6fa;color:#17243b;line-height:1.6}
+header{background:#101d35;color:white;padding:25px 6%}
+.logo{font-size:28px;font-weight:bold}
+.logo span{color:#f04455}
+header p{color:#cbd5e1;font-size:14px}
+nav{background:#1b2d49;padding:14px 6%;display:flex;gap:25px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-weight:bold;font-size:14px}
+nav a:hover{color:#ff6574}
+.breaking{background:#ed394d;color:white;padding:10px 6%;font-weight:bold}
+.container{max-width:1100px;margin:30px auto;padding:0 18px}
+.hero{background:linear-gradient(120deg,#142440,#345477);color:white;padding:45px 30px;border-radius:12px;margin-bottom:30px}
+.hero small{color:#ff8290;font-weight:bold;letter-spacing:2px}
+.hero h1{font-size:38px;line-height:1.25;margin:12px 0}
+.hero p{color:#e0e7f0;max-width:650px}
+h2{font-size:24px;border-left:5px solid #ed394d;padding-left:12px;margin:30px 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:white;border-radius:10px;overflow:hidden;box-shadow:0 3px 14px #00000012}
+.picture{height:130px;background:#233b5e;color:white;display:flex;align-items:center;justify-content:center;font-size:45px}
+.content{padding:18px}
+.category{color:#e93649;font-weight:bold;font-size:12px;text-transform:uppercase}
+.card h3{font-size:19px;margin:7px 0}
+.card p{color:#667085;font-size:14px}
+.about{background:white;padding:22px;border-radius:10px;color:#566174}
+footer{background:#101d35;color:#cbd5e1;text-align:center;padding:30px 15px;margin-top:50px}
+footer strong{color:white;font-size:22px}
+footer p{font-size:13px;margin-top:8px}
+@media(max-width:600px){.hero h1{font-size:29px}nav{gap:14px}.logo{font-size:23px}}
 </style>
 </head>
 <body>
-<div class="topline"></div>
+
 <header>
- <div class="head">
-  <div><a class="brand" href="#">WORLD <b>PULSE</b></a><div class="tag">Understand what matters</div></div>
-  <div class="headright">INDEPENDENT NEWS & EXPLAINERS<br><span id="today"></span></div>
- </div>
- <div class="navwrap"><nav>
-  <a href="#latest">Latest</a><a href="#world">World</a><a href="#business">Business</a><a href="#technology">Technology</a><a href="#science">Science</a><a href="#sport">Sport</a><a href="#about">About</a>
- </nav></div>
+<div class="logo">WORLD PULSE <span>NEWS</span></div>
+<p>Your World. Your News. Every Day.</p>
 </header>
-<div class="breaking"><strong>EDITOR'S NOTE</strong><span>This is a starter website. Replace the sample content with verified, original reporting before publishing.</span></div>
-<main>
- <div class="leadgrid">
-  <article class="hero">
-   <div class="heroimg"><div class="placeholder">FEATURE IMAGE<br><small>Add a licensed or original news photograph here</small></div></div>
-   <div class="herotext"><div class="kicker">World · Explainer</div><h1>Make sense of a changing world</h1><p class="deck">Clear context, useful explainers and carefully sourced reporting on the stories shaping our world.</p><div class="meta">EDITORIAL INTRODUCTION · 3 MIN READ</div></div>
-  </article>
-  <div class="sidecol">
-   <article class="sidecard"><div class="kicker">Business</div><h2>What moves the global economy?</h2><p>Explore the forces behind markets, trade, jobs and the cost of living through accessible explainers.</p><div class="meta">SECTION OVERVIEW</div></article>
-   <article class="sidecard"><div class="kicker">Technology</div><h2>Technology changing everyday life</h2><p>Follow developments in artificial intelligence, cybersecurity, gadgets and digital policy.</p><div class="meta">SECTION OVERVIEW</div></article>
-  </div>
- </div>
- <div class="sectionhead" id="latest"><h2>Latest coverage</h2><span>Sample layout · add verified stories</span></div>
- <div class="cards">
-  <article class="story" id="world"><div class="label">World</div><h3>How to read international news with context</h3><p>A useful report explains what happened, who is involved, what is confirmed and what remains uncertain.</p><div class="meta">EDITORIAL GUIDE · 4 MIN READ</div></article>
-  <article class="story" id="business"><div class="label">Business</div><h3>Understanding inflation and household costs</h3><p>A plain-language guide to price changes, purchasing power and the indicators economists monitor.</p><div class="meta">EXPLAINER · 5 MIN READ</div></article>
-  <article class="story" id="technology"><div class="label">Technology</div><h3>Artificial intelligence: benefits and open questions</h3><p>What AI systems can do, where they can fail and why transparency and human oversight matter.</p><div class="meta">EXPLAINER · 6 MIN READ</div></article>
-  <article class="story" id="science"><div class="label">Science</div><h3>How scientific discoveries become useful innovations</h3><p>From peer review to practical applications, learn how evidence moves from research to real life.</p><div class="meta">SCIENCE · 4 MIN READ</div></article>
-  <article class="story" id="sport"><div class="label">Sport</div><h3>What makes a strong sports analysis?</h3><p>Look beyond the score with tactics, reliable statistics, team news and match context.</p><div class="meta">SPORTS GUIDE · 3 MIN READ</div></article>
-  <article class="story"><div class="label">Media literacy</div><h3>Five checks to make before sharing a breaking story</h3><p>Check the original source, publication time, corroboration, evidence and whether images are authentic.</p><div class="meta">GUIDE · 3 MIN READ</div></article>
- </div>
- <div class="layout2">
-  <section class="panel"><h2>Explore our sections</h2><div class="topiclist"><div class="topic">🌍 World affairs</div><div class="topic">📈 Business & economy</div><div class="topic">💻 Technology</div><div class="topic">🔬 Science & health</div><div class="topic">⚽ Sport</div><div class="topic">🌱 Environment</div></div></section>
-  <aside class="panel" id="about"><h2>Our editorial approach</h2><p class="note">We aim to publish accurate, readable and useful journalism. Every news article should identify its publication date, distinguish fact from analysis, link to reliable sources and correct material errors transparently.</p><p class="note">This starter page contains sample editorial copy, not current breaking news. Do not present sample cards as reported events.</p></aside>
- </div>
- <div class="disclaimer">Publishing checklist: replace sample cards with original articles; verify every factual claim; add source links and author/date details; use images you own or are licensed to publish; create real Contact, Privacy Policy and Corrections pages before applying for advertising.</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#world">World</a>
+<a href="#politics">Politics</a>
+<a href="#business">Business</a>
+<a href="#technology">Technology</a>
+<a href="#sports">Sports</a>
+</nav>
+
+<div class="breaking">WORLD PULSE NEWS | GLOBAL NEWS</div>
+
+<main class="container">
+
+<section class="hero">
+<small>WELCOME TO WORLD PULSE NEWS</small>
+<h1>Stay Informed.<br>Understand the World.</h1>
+<p>Your destination for international news, politics, business, technology and sports. Discover the stories shaping our world.</p>
+</section>
+
+<h2 id="world">World News</h2>
+<div class="grid">
+
+<article class="card">
+<div class="picture">🌍</div>
+<div class="content">
+<span class="category">World</span>
+<h3>World News</h3>
+<p>International news and the latest developments from around the globe.</p>
+</div>
+</article>
+
+<article class="card" id="politics">
+<div class="picture">🏛️</div>
+<div class="content">
+<span class="category">Politics</span>
+<h3>Politics</h3>
+<p>Political developments, international relations and government news.</p>
+</div>
+</article>
+
+<article class="card" id="business">
+<div class="picture">📈</div>
+<div class="content">
+<span class="category">Business</span>
+<h3>Business & Economy</h3>
+<p>Markets, finance, trade and global economic news.</p>
+</div>
+</article>
+
+<article class="card" id="technology">
+<div class="picture">💻</div>
+<div class="content">
+<span class="category">Technology</span>
+<h3>Technology</h3>
+<p>Discover innovation, science and the latest technology stories.</p>
+</div>
+</article>
+
+<article class="card" id="sports">
+<div class="picture">⚽</div>
+<div class="content">
+<span class="category">Sports</span>
+<h3>Sports</h3>
+<p>Sports news, competitions, teams and results from around the world.</p>
+</div>
+</article>
+
+</div>
+
+<h2>About World Pulse News</h2>
+<div class="about">
+World Pulse News is an independent news website dedicated to covering important stories from around the world. Our mission is to provide clear, useful and reliable information.
+</div>
+
 </main>
+
 <footer>
- <div class="foot">
-  <div><h3>World Pulse News</h3><p>Independent explainers and news coverage to help readers understand the stories that matter.</p></div>
-  <div><h3>Sections</h3><a href="#world">World</a><a href="#business">Business</a><a href="#technology">Technology</a><a href="#science">Science</a><a href="#sport">Sport</a></div>
-  <div><h3>Information</h3><a href="#about">About us</a><a href="mailto:contact@example.com">Contact (replace this email)</a><a href="#privacy">Privacy policy (create before launch)</a><a href="#corrections">Corrections policy (create before launch)</a></div>
- </div>
- <div class="copyright">© <span id="year"></span> World Pulse News. All rights reserved. Demo template — sample content only.</div>
+<strong>WORLD PULSE NEWS</strong>
+<p>Your World. Your News. Every Day.</p>
+<p>© 2026 World Pulse News. All Rights Reserved.</p>
 </footer>
-<script>
-const d=new Date();document.getElementById('today').textContent=d.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});document.getElementById('year').textContent=d.getFullYear();
-</script>
-</body></html>
+
+</body>
+</html>
